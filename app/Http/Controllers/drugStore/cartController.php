@@ -10,7 +10,7 @@ class cartController
 	 * 
 	 * @return 
 	 */
-	public function show() {
+	public function calcCart() {
 		$cart = Cookie::get('cart');
 		if (is_null($cart))
 			$cart = array();
@@ -55,6 +55,17 @@ class cartController
 			'sumPrice' => $sumPrice,
 			'sumOff' => $sumOff
 		);
+
+		return $data;
+	}
+
+	/**
+	 * 
+	 * 
+	 * @return 
+	 */
+	public function show() {
+		$data = $this->calcCart();
 
 		return View('drug_store.cart')->with($data);
 	}

@@ -9,7 +9,7 @@ class finalizeController
 	 * 
 	 * @return 
 	 */
-	public function show() {
+	public function goToBank() {
 		dd($_POST);
 	}
 }
