@@ -1,0 +1,16 @@
+/* 
+sldier
+*/
+
+/* start sldier */
+.carousel-cell {
+	/*width: calc(80% - 10px);*/
+	width: 200px;
+	border: solid 1px;
+	box-sizing: border-box;
+	height: 200px;
+	margin: 0 5px;
+	background: #8C8;
+	border-radius: 5px;
+}
+/* end slider */

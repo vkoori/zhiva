@@ -1,0 +1,74 @@
+.cart-details-row{
+	margin: 0.5em 0;
+}
+#cart-list a{
+	text-decoration: blink;
+	color: #333333;
+}
+#cart-list a:hover,
+#cart-list a:active{
+	color: #337ab7;
+}
+.count{
+	max-width: 200px;
+}
+.count button{
+	position: absolute;
+	height: 33px;
+	width: 30px;
+	top: 0;
+}
+.plus{
+	right: 0.5em;
+}
+.plus span{
+	width: 10px;
+	border-top: 2px solid #303030;
+	display: inline-block;
+	position: relative;
+	margin-bottom: 2px;
+}
+.plus span:before {
+	content: "";
+	width: 10px;
+	border-top: 2px solid #303030;
+	display: inline-block;
+	-webkit-transform: rotate(90deg);
+	-ms-transform: rotate(90deg);
+	transform: rotate(90deg);
+	-webkit-transform-origin: center;
+	-ms-transform-origin: center;
+	transform-origin: center;
+	position: absolute;
+	top: -2px;
+	left: 0;
+}
+.minus{
+	left: 0;
+}
+.minus span{
+	width: 10px;
+	border-top: 2px solid #303030;
+	display: inline-block;
+	position: relative;
+	margin-bottom: 2px;
+}
+.count div{
+	height: 33px;
+	line-height: 33px;
+	width: calc(100% - 0.5em);
+	margin-right: auto;
+	display: block;
+	text-align: center;
+}
+.cart-price{
+	text-align: center;
+	padding-left: calc(20px + 1em);
+}
+.remove-btn{
+	background: none;
+	border: none;
+	outline: none;
+	padding: 0;
+	margin: 0;
+}
