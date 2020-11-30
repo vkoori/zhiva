@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\drugStore;
 use Illuminate\Support\Facades\Http;
+use App\Http\Controllers\drugStore\cartController;
 
 class addressController
 {
@@ -11,41 +12,8 @@ class addressController
 	 * @return 
 	 */
 	public function show() {
-		$cart = \Cookie::get('cart');
-		if (is_null($cart))
-			$cart = array();
-		else
-			$cart = unserialize($cart);
-
-		if (sizeof($cart) == 0)
-			return redirect('cart');
-
-		$getCart = app('App\Http\Controllers\api\drugStore\cartController');
-
-		$sumPrice = 0;
-		$sumOff = 0;
-		foreach ($cart as $k => $c) {
-			$p = $getCart->products_of_cart($c['id'], $c['weight'], $c['taste']);
-			$p = $p[0];
-			
-			if ($c['qty'] > $p->stock) {
-				if ($p->stock == 0)
-					unset($cart[$k]);
-				else
-					$cart[$k]['qty'] = $p->stock;
-				$c['qty'] = $cart[$k]['qty']; // use in sumPrice and sumOff
-				$cart = serialize($cart);
-				\Cookie::queue('cart', $cart, 60*24*30);
-			}
-
-			$sumPrice += $p->price * $c['qty'];
-			$sumOff += $p->off * $c['qty'];
-		}
-
-		$data = array(
-			'sumPrice' => $sumPrice,
-			'sumOff' => $sumOff
-		);
+		$cartController = new cartController;
+		$data = $cartController->calcCart();
 
 		$profileController = app('App\Http\Controllers\profileController');
 		$address = $profileController->address();
