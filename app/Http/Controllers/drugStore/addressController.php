@@ -18,7 +18,7 @@ class addressController
 		$profileController = app('App\Http\Controllers\profileController');
 		$address = $profileController->address();
 		$data = array_merge($data, $address);
-		$data['form_url'] = url('finalize-order');
+		$data['form_url'] = url('address');
 
 		return View('drug_store.address')->with($data);
 	}
@@ -106,7 +106,7 @@ class addressController
 		$profileClass->addAddress($data);
 		$addressid = $profileClass->getAddress($userid);
 
-		return View('drug_store.finalize');
+		return redirect('address');
 
 	}
 }

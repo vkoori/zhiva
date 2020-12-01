@@ -36,7 +36,8 @@ Route::middleware(['login'])->group(function () {
 Route::middleware(['mustLogin:0'])->group(function () {
 	Route::get('خروج', 'userController@quit');
 	Route::get('address', 'drugStore\addressController@show');
-	Route::post('finalize-order', 'drugStore\addressController@insert');
+	Route::post('address', 'drugStore\addressController@insert');
+	Route::post('finalize-order', 'drugStore\finalizeController@show');
 });
 
 Route::middleware(['origin'])->group(function () {
