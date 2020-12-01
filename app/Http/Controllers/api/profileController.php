@@ -39,7 +39,8 @@ class profileController
                                 INNER JOIN `cities`
                                 ON `cities`.`id`=`address`.`cityid`
                                 INNER JOIN `provinces`
-                                ON `provinces`.`id`=`cities`.`provinceid`");
+                                ON `provinces`.`id`=`cities`.`provinceid`
+                                ORDER BY `address`.`id` DESC");
         return $addresses;
     }
 
