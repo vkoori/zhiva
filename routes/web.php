@@ -17,7 +17,7 @@ Route::get('/', function () {
     return view('drug_store.index');
 });
 
-Route::get('shop/{category}/{slug}', ['as' => 'product', 'uses' => 'drugStore\productController@__construct']);
+Route::get('shop/{category}/{slug}', ['as' => 'product', 'uses' => 'drugStore\productController@myConstruct']);
 Route::get('shop/{slug?}', ['as' => 'dr_category', 'uses' => 'drugStore\categoryController@show']);
 Route::get('cart', 'drugStore\cartController@show');
 Route::post('cart', 'drugStore\cartController@add');
