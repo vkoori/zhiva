@@ -15,6 +15,17 @@
 		{{-- <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script> --}}
 		<script src="{{ asset('public/assets/scripts/libraries/flickity.pkgd.min.js') }}"></script>
 		<script src="{{ asset('public/assets/scripts/supplements/product.js') }}/"></script>
+	@elseif (Request::is('finalize-order'))
+		<script src="{{ asset('public/assets/scripts/libraries/flickity.pkgd.min.js') }}"></script>
+		<script>
+			$(".order-summary").flickity({
+			    lazyLoad: 5,
+			    rightToLeft: true,
+			    // wrapAround: true,
+			    pageDots: false,
+			    cellAlign: "right",
+			});
+		</script>
 	@endif
 </body>
 </html>

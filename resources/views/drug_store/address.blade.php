@@ -1,6 +1,9 @@
 @include('../layout/header')
 		<main class="container">
-			<h1 class="h3">آدرس ارسال</h1>
+			<h1 class="h3 d-inline-block">آدرس ارسال</h1>
+			@if (sizeof($addresses) > 0)
+				<p class="d-inline-block mr-x-1em"><a href="{{ url('new-address').'?back='.url()->current() }}" title="ثبت آدرس جدید">(ثبت آدرس جدید)</a></p>
+			@endif
 			@if (sizeof($addresses) == 0)
 				<div class="row">
 			@else
@@ -16,10 +19,7 @@
 				</div>
 				<div class="col-md-4">
 					<div class="border p-1em">
-						<div>ارزش کالا: <span class="pull-left">{{number_format($sumPrice)}} <span class="small">تومان</span></span></div>
-						<div>تخفیف: <span class="pull-left">{{number_format($sumOff)}} <span class="small">تومان</span></span></div>
-						<div>مبلغ پرداختی: <span class="pull-left">{{number_format($sumPrice - $sumOff)}} <span class="small">تومان</span></span></div>
-						<div>هزینه ارسال: <span class="pull-left">به عهده مشتری</span></div>
+						@include('drug_store/layout/cart-summary')
 						<hr>
 						<div>
 							@if (sizeof($addresses) == 0)
