@@ -54,6 +54,8 @@
 		<link rel="stylesheet" href="{{ asset('public/assets/styles/supplements/product.css') }}">
 	@elseif (Request::is('cart'))
 		<link rel="stylesheet" href="{{ asset('public/assets/styles/supplements/cart.css') }}">
+	@elseif (Request::is('finalize-order'))
+		<link rel="stylesheet" href="{{ asset('public/assets/styles/libraries/flickity.min.css') }}">
 	@endif
 
 <!-- <meta name="robots" content="index, follow">

@@ -49,6 +49,21 @@ class profileController
      * 
      * @return 
      */
+    public function getAddressWithId($addressid) {
+        $address = DB::select("SELECT `address`.`id`, `address`, `postal_code`, `lat`, `lng`, `city`, `province`
+                                FROM (SELECT * FROM `addresses` WHERE `id`=$addressid) AS `address`
+                                INNER JOIN `cities`
+                                ON `cities`.`id`=`address`.`cityid`
+                                INNER JOIN `provinces`
+                                ON `provinces`.`id`=`cities`.`provinceid`");
+        return $address;
+    }
+
+    /**
+     * 
+     * 
+     * @return 
+     */
     public function provinces() {
         $provinces = DB::table('provinces')
                     ->get();

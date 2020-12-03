@@ -6,6 +6,7 @@
 	.address-box > label{display: block;min-height: 200px;margin-bottom: 1em;}
 </style>
 <div class="row">
+	{{-- <p><a href="{{ url('new-address').'?back='.url()->current() }}" title="ثبت آدرس جدید">ثبت آدرس جدید</a></p> --}}
 	@foreach ($addresses as $key => $address)
 		<div class="col-md-6 address-box">
 			<label for="address{{$address->id}}" class="p-1em border">

@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\drugStore;
 use Illuminate\Support\Facades\Http;
-use App\Http\Controllers\drugStore\cartController;
 
 class addressController
 {
@@ -12,7 +11,7 @@ class addressController
 	 * @return 
 	 */
 	public function show() {
-		$cartController = new cartController;
+		$cartController = app('App\Http\Controllers\drugStore\cartController');
 		$data = $cartController->calcCart();
 
 		$profileController = app('App\Http\Controllers\profileController');
@@ -23,7 +22,7 @@ class addressController
 		return View('drug_store.address')->with($data);
 	}
 
-		/**
+	/**
 	 * 
 	 * 
 	 * @return 
@@ -107,6 +106,39 @@ class addressController
 		$addressid = $profileClass->getAddress($userid);
 
 		return redirect('address');
+
+	}
+
+	/**
+	 * 
+	 * 
+	 * @return 
+	 */
+	public function addNew() {
+		$url = request()->fullUrl();
+		$parts = parse_url($url);
+		parse_str($parts['query'], $query);
+		$form_url = $query['back'];
+
+		$profileClass = app('App\Http\Controllers\api\profileController');
+		$provinces = $profileClass->provinces();
+		
+		$data = array(
+			'customer' 		=> array('user has info'),
+			'provinces' 	=> $provinces,
+			'form_url' 		=> $form_url
+		);
+
+		if ($form_url == url('address')) {
+			$cartController = app('App\Http\Controllers\drugStore\cartController');
+			$cart = $cartController->calcCart();
+			
+			$data = array_merge($data, $cart);
+
+			return View('drug_store.add-another-address')->with($data);
+		} else {
+			return 'add new address in profile page';
+		}
 
 	}
 }

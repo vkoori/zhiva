@@ -3,7 +3,7 @@
 	<div class="suggest-product">
 		@foreach ($suggests as $suggest)
 			<div class="carousel-cell">
-				<a class="p-1em" href="{{ url($suggest->slug) }}" title="">
+				<a class="p-1em" href="{{ url($suggest->slug) }}" title="{{$suggest->fa_name}}">
 					<img data-flickity-lazyload="{{ asset($suggest->img.'/medium/1.jpg') }}">
 					<hr>
 					<div class="h5">{{$suggest->fa_name}}</div>

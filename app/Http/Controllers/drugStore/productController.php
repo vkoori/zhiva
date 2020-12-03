@@ -11,7 +11,7 @@ class productController
 	 * 
 	 * @return 
 	 */
-	function __construct() {
+	function myConstruct() {
 		$category = request()->route('category');
 		$category = 'shop/'.urlencode(urldecode($category));
 		$slug = request()->route('slug');
