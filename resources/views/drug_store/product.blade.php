@@ -1,4 +1,4 @@
-@include('../layout/header')
+@include('layout/header')
 	<main class="container">
 		<div class="row">
 			<ul itemscope="" itemtype="http://schema.org/BreadcrumbList" id="your-location">
@@ -307,4 +307,4 @@
 			</div>
 		</div>
 	</main>
-@include('../layout/footer')
+@include('layout/footer')

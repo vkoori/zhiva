@@ -1,4 +1,4 @@
-@include('../layout/header')
+@include('layout/header')
 		<style>
 			.bold-shadow{text-shadow: 0px 0px 0px black;}
 			.icon-address::before{content:'';width: 20px;height: 20px;display: inline-block;vertical-align: middle;background-size: contain;margin-left: 1em;}
@@ -114,4 +114,4 @@
 				</div>
 			</div>
 		</main>
-@include('../layout/footer')
+@include('layout/footer')

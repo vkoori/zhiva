@@ -1,4 +1,4 @@
-@include('../layout/header')
+@include('layout/header')
 		<main class="container">
 			<h1 class="h3">سبد خرید</h1>
 			@if (sizeof($cart) > 0)
@@ -93,4 +93,4 @@
 				<div class="warning p-1em h5">سبد خرید شما خالی است.</div>
 			@endif
 		</main>
-@include('../layout/footer')
+@include('layout/footer')

@@ -12,16 +12,16 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('drug_store.index');
+Route::middleware(['menu'])->group(function () {
+	Route::get('/', function () {
+		return view('drug_store.index');
+	});
+	Route::get('shop/{category}/{slug}', ['as' => 'product', 'uses' => 'drugStore\productController@myConstruct']);
+	Route::get('shop/{slug?}', ['as' => 'dr_category', 'uses' => 'drugStore\categoryController@show']);
+	Route::get('cart', 'drugStore\cartController@show');
+	Route::post('cart', 'drugStore\cartController@add');
+	Route::put('cart', 'drugStore\cartController@update');
 });
-
-Route::get('shop/{category}/{slug}', ['as' => 'product', 'uses' => 'drugStore\productController@myConstruct']);
-Route::get('shop/{slug?}', ['as' => 'dr_category', 'uses' => 'drugStore\categoryController@show']);
-Route::get('cart', 'drugStore\cartController@show');
-Route::post('cart', 'drugStore\cartController@add');
-Route::put('cart', 'drugStore\cartController@update');
 
 Route::middleware(['login'])->group(function () {
 	Route::get('ورود', 'userController@show');
