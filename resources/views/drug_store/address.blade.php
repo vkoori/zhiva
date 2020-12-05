@@ -1,4 +1,4 @@
-@include('../layout/header')
+@include('layout/header')
 		<main class="container">
 			<h1 class="h3 d-inline-block">آدرس ارسال</h1>
 			@if (sizeof($addresses) > 0)
@@ -12,9 +12,9 @@
 			@endif
 				<div class="col-md-8" id="cart-list">
 					@if (sizeof($addresses) == 0)
-						@include('../profile/add-address')
+						@include('profile/add-address')
 					@else
-						@include('../profile/list-address')
+						@include('profile/list-address')
 					@endif
 				</div>
 				<div class="col-md-4">
@@ -37,4 +37,4 @@
 			@endif
 		</main>
 
-@include('../layout/footer')
+@include('layout/footer')

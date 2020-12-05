@@ -1,4 +1,4 @@
-@include('../layout/header')
+@include('layout/header')
 		<main class="container">
 			<div class="carousel" data-flickity='{ "groupCells": true, "wrapAround": true, "cellAlign": "right", "pageDots": false, "lazyLoad": 2, "rightToLeft": true }'>
 				<div class="carousel-cell">1</div>
@@ -14,4 +14,4 @@
 				<div class="carousel-cell">11</div>
 			</div>
 		</main>
-@include('../layout/footer')
+@include('layout/footer')

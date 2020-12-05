@@ -1,4 +1,4 @@
-@include('../layout/header')
+@include('layout/header')
 		<main class="container">
 			<h1 class="h3">ثبت آدرس جدید</h1>
 			<div class="row">
@@ -17,4 +17,4 @@
 			</div>
 		</main>
 
-@include('../layout/footer')
+@include('layout/footer')

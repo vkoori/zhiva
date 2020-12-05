@@ -68,5 +68,6 @@ class Kernel extends HttpKernel
         'mustLogin' => \App\Http\Middleware\mustLogin::class,
         'origin' => \App\Http\Middleware\DomainCheckMiddleware::class,
         'ajax' => \App\Http\Middleware\CheckAjax::class,
+        'menu' => \App\Http\Middleware\menuMiddleware::class
     ];
 }
