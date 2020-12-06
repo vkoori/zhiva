@@ -719,6 +719,36 @@ header{
 	display: block;
 	margin: 0 auto;
 }
+.expand-menu{
+	position: absolute;
+	right: 0;
+	top: calc(100% + 13px);
+	padding: 0.5em;
+	border: solid 1px #26bff9;
+	background: #ffffff;
+	min-width: 150px;
+	z-index: 2;
+	text-align: right;
+}
+.expand-menu:before, .expand-menu:after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 100%;
+  width: 0;
+  height: 0;
+}
+.expand-menu:before {
+  right: 10px;
+  border: 8px solid transparent;
+  border-bottom-color: #26bff9;
+}
+.expand-menu:after {
+  right: 11px;
+  border: 7px solid transparent;
+  border-bottom-color: #fff;
+}
+
 /* start navigation */
 #toggle-nav{
 	display: inline-block;

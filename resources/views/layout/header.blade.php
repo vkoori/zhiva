@@ -103,9 +103,16 @@
 							<span>ورود / ثبت&zwnj;نام</span>
 						</a>
 					@else
-						<a href="{{ url('پروفایل') }}" title="حساب کاربری">
+						<a class="relative" href="{{ url('پروفایل') }}" title="حساب کاربری">
 							<img src="{{ asset('public/assets/images/items/user.svg') }}" alt="پروفایل" width="30px" height="30px">
 							<span>حساب کاربری</span>
+							<div class="expand-menu">
+								<ul>
+									<li><a href="" title="سفارش ها">سفارش ها من</a></li>
+									<li><a href="" title="پروفایل">پروفایل</a></li>
+									<li><a href="" title="خروج">خروج</a></li>
+								</ul>
+							</div>
 						</a>
 					@endif
 					<a href="{{ url('cart') }}" title="سبد خرید">
@@ -121,131 +128,6 @@
 			</span>
 			<ul id="nav">
 				{!!request()->instance()->query('nav')!!}
-				<li class="other-nav">
-					<a href="" title="">مجله</a>
-					<div class="flex sub-menu">
-						<div class="DesktopSubNavList">
-							<h3 class="h5 bold">
-								<a href="">Build Muscle Plans</a>
-							</h3>
-							<ul>
-								<li><a href="" title="">Pre-Workout</a></li>
-								<li><a href="" title="">Intra-Workout</a></li>
-								<li><a href="" title="">Post-Workout Recovery</a></li>
-								<li><a href="" title="">Energy & Endurance</a></li>
-							</ul>
-							<h3 class="h5 bold">
-								<a href="">Build Muscle Plans</a>
-							</h3>
-							<ul>
-								<li><a href="" title="">Pre-Workout</a></li>
-								<li><a href="" title="">Intra-Workout</a></li>
-								<li><a href="" title="">Post-Workout Recovery</a></li>
-								<li><a href="" title="">Energy & Endurance</a></li>
-							</ul>
-						</div>
-						<div class="DesktopSubNavList">
-							<h3 class="h5 bold">
-								<a href="">Build Muscle Plans</a>
-							</h3>
-							<ul>
-								<li><a href="" title="">Pre-Workout</a></li>
-								<li><a href="" title="">Intra-Workout</a></li>
-								<li><a href="" title="">Post-Workout Recovery</a></li>
-								<li><a href="" title="">Energy & Endurance</a></li>
-							</ul>
-						</div>
-						<div class="DesktopSubNavFeatures">
-							<h3 class="h4">Performance Features</h3>
-							<div>
-								<ul class="flex">
-									<li>
-										<a href="" title="">
-											<img src="https://www.bodybuilding.com/images/merch/550boxes/05-29-flyout-rtd.jpg" alt="">
-											<h6>Energy Drinks</h6>
-										</a>
-									</li>
-									<li>
-										<a href="" title="">
-											<img src="https://www.bodybuilding.com/images/merch/550boxes/05-29-flyout-rtd.jpg" alt="">
-											<h6>Energy Drinks</h6>
-										</a>
-									</li>
-									<li>
-										<a href="" title="">
-											<img src="https://www.bodybuilding.com/images/merch/550boxes/05-29-flyout-rtd.jpg" alt="">
-											<h6>Energy Drinks</h6>
-										</a>
-									</li>
-									<li>
-										<a href="" title="">
-											<img src="https://www.bodybuilding.com/images/merch/550boxes/05-29-flyout-rtd.jpg" alt="">
-											<h6>Energy Drinks</h6>
-										</a>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</li>
-				<li class="other-nav">
-					<a href="" title="">مربیان</a>
-					<div class="flex sub-menu">
-						<div class="DesktopSubNavList">
-							<h3 class="h5 bold">
-								<a href="">Build Muscle Plans</a>
-							</h3>
-							<ul>
-								<li><a href="" title="">Fat Burners</a></li>
-								<li><a href="" title="">Appetite Control</a></li>
-								<li><a href="" title="">CLA</a></li>
-								<li><a href="" title="">L-Carnitine</a></li>
-							</ul>
-						</div>
-						<div class="DesktopSubNavList">
-							<h3 class="h5 bold">
-								<a href="">Build Muscle Plans</a>
-							</h3>
-							<ul>
-								<li><a href="" title="">Pre-Workout</a></li>
-								<li><a href="" title="">Intra-Workout</a></li>
-								<li><a href="" title="">Post-Workout Recovery</a></li>
-								<li><a href="" title="">Energy & Endurance</a></li>
-							</ul>
-						</div>
-						<div class="DesktopSubNavFeatures">
-							<h3 class="h4">Weight Management Features</h3>
-							<div>
-								<ul class="flex">
-									<li>
-										<a href="" title="">
-											<img src="{{ asset('public/assets/images/menu/3.jpg') }}" alt="">
-											<h6>Fat Burners from EVL</h6>
-										</a>
-									</li>
-									<li>
-										<a href="" title="">
-											<img src="{{ asset('public/assets/images/menu/3.jpg') }}" alt="">
-											<h6>Fat Burners from EVL</h6>
-										</a>
-									</li>
-									<li>
-										<a href="" title="">
-											<img src="{{ asset('public/assets/images/menu/3.jpg') }}" alt="">
-											<h6>Fat Burners from EVL</h6>
-										</a>
-									</li>
-									<li>
-										<a href="" title="">
-											<img src="{{ asset('public/assets/images/menu/3.jpg') }}" alt="">
-											<h6>Fat Burners from EVL</h6>
-										</a>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</li>
 			</ul>
 		</nav>
 	</header><!-- /header -->
