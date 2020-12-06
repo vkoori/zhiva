@@ -103,17 +103,19 @@
 							<span>ورود / ثبت&zwnj;نام</span>
 						</a>
 					@else
-						<a class="relative" href="{{ url('پروفایل') }}" title="حساب کاربری">
-							<img src="{{ asset('public/assets/images/items/user.svg') }}" alt="پروفایل" width="30px" height="30px">
-							<span>حساب کاربری</span>
+						<div class="relative">
+							<a id="profile-toggle" href="{{ url('پروفایل') }}" title="حساب کاربری">
+								<img src="{{ asset('public/assets/images/items/user.svg') }}" alt="پروفایل" width="30px" height="30px">
+								<span>حساب کاربری</span>
+							</a>
 							<div class="expand-menu">
 								<ul>
 									<li><a href="" title="سفارش ها">سفارش ها من</a></li>
 									<li><a href="" title="پروفایل">پروفایل</a></li>
-									<li><a href="" title="خروج">خروج</a></li>
+									<li><a href="{{url("خروج")}}" title="خروج">خروج</a></li>
 								</ul>
 							</div>
-						</a>
+						</div>
 					@endif
 					<a href="{{ url('cart') }}" title="سبد خرید">
 						<img src="{{ asset('public/assets/images/items/cart.svg') }}" alt="" width="30px" height="30px">

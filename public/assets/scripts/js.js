@@ -19,6 +19,14 @@ $("#toggle-nav").click(function() {
 	});
 });
 
+$(document).on('click', function(event) { 
+    if($(event.target).closest('#profile-toggle').length) {
+		event.preventDefault();
+		$("#profile-toggle").next().toggle();
+    }else if (!$(event.target).closest('.expand-menu').length) {
+        $(".expand-menu").hide();
+    }
+});
 $(document).ready(function() {
 	var navbarHeight = $('header').outerHeight();
 	$("body").css('padding-top', navbarHeight+'px');

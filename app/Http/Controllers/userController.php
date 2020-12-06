@@ -21,7 +21,7 @@ class userController
 	public function mobileChecker() {
 		// check validation
 		$rules = [
-			'mobile' => array('required', 'regex:/^09[0-9]{9}$|^\u0660\u0669[\u0660-\u0669]{9}$|^\u06F0\u06F9[\u06F0-\u06F9]{9}$/u')
+			'mobile' => array('required', 'regex:/^09[0-9]{9}$|^\x{0660}\x{0669}[\x{0660}-\x{0669}]{9}$|^\x{06F0}\x{06F9}[\x{06F0}-\x{06F9}]{9}$/u')
 		];
 
 		$customMessages = [
