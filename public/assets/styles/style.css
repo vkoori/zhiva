@@ -707,9 +707,11 @@ header{
 	text-align: left;
 }
 #quick-link a{
-	display: inline-block;
 	margin-right: 1em;
 	text-decoration: blink;
+}
+#quick-link > *{
+	display: inline-block;
 }
 #quick-link span{
 	font-size: 0.9em;
@@ -720,15 +722,17 @@ header{
 	margin: 0 auto;
 }
 .expand-menu{
+	display: none;
 	position: absolute;
 	right: 0;
 	top: calc(100% + 13px);
-	padding: 0.5em;
+	padding: 0.5em 1em;
 	border: solid 1px #26bff9;
 	background: #ffffff;
 	min-width: 150px;
 	z-index: 2;
 	text-align: right;
+	box-shadow: 0px 2px 4px 0px rgba(0,0,0,.24);
 }
 .expand-menu:before, .expand-menu:after {
   content: '';
@@ -739,16 +743,32 @@ header{
   height: 0;
 }
 .expand-menu:before {
-  right: 10px;
+  right: 20px;
   border: 8px solid transparent;
   border-bottom-color: #26bff9;
 }
 .expand-menu:after {
-  right: 11px;
+  right: 21px;
   border: 7px solid transparent;
   border-bottom-color: #fff;
 }
-
+.expand-menu ul{
+	margin: 0;
+	padding: 0;
+}
+.expand-menu li{
+	display: block;
+	border-bottom: solid 1px #26bff9;
+}
+.expand-menu li:last-child{
+	border-bottom: none;
+}
+.expand-menu a{
+	white-space: nowrap;
+	display: block;
+	padding: 0.5em 0;
+	margin: 0!important;
+}
 /* start navigation */
 #toggle-nav{
 	display: inline-block;
