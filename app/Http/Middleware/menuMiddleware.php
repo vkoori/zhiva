@@ -42,39 +42,97 @@ class menuMiddleware {
                 $class = '';
 
             $nav .= '<li '.$class.'>
-                        <a href="'.url($mainMenu->slug).'" title="'.$mainMenu->name.'">'.$mainMenu->name.'</a>
+                        <a href="'.url($this->prefix_slug($mainMenu->cat).$mainMenu->slug).'" title="'.$mainMenu->name.'">'.$mainMenu->name.'</a>
                         <div class="flex sub-menu">
                             <div class="DesktopSubNavList">
                                 <ul>';
                                     foreach ($mainMenu->children as $subMenu) {
-                                        $nav .= '<li><a href="'.$subMenu->slug.'" title="'.$subMenu->name.'">'.$subMenu->name.'</a></li>';
+                                        $nav .= '<li><a href="'.url($this->prefix_slug($mainMenu->cat).$subMenu->slug).'" title="'.$subMenu->name.'">'.$subMenu->name.'</a></li>';
                                     }
                                 $nav .= '</ul>
                             </div>';
-                            switch ($mainMenu->feature) {
-                                case '1':
-                                    $nav .= $this->protein();
-                                    break;
-                                case '2':
-                                    $nav .= $this->performance();
-                                    break;
-                                case '3':
-                                    $nav .= $this->weightManagement();
-                                    break;
-                                default:
-                                    break;
-                            }
+                            $nav .= $this->feature($mainMenu->feature);
                         $nav .= '</div>
                     </li>';
         }
 
 
-
-        
-
-        $request->merge(array("nav" => $nav));
+        $leftNav = '';
+        foreach ($myJson as $mainMenu) {
+            $leftNav .= '<li class="other-nav">
+                            <a href="'.url($this->prefix_slug($mainMenu->cat).$mainMenu->slug).'" title="'.$mainMenu->name.'">'.$mainMenu->name.'</a>
+                            <div class="flex sub-menu">';
+                                foreach ($mainMenu->children as $key => $subMenu) {
+                                    if ($key % 2 == 0) {
+                                        if ($key == 0) 
+                                            $leftNav .= '<div class="DesktopSubNavList">';
+                                        else
+                                            $leftNav .= '</div><div class="DesktopSubNavList">';
+                                    }
+                                    
+                                    $leftNav .= '
+                                        <h3 class="h5 bold">
+                                            <a href="'.url($this->prefix_slug($mainMenu->cat).$subMenu->slug).'">'.$subMenu->name.'</a>
+                                        </h3>
+                                        <ul>';
+                                            foreach ($subMenu->children as $littleSub) {
+                                                $leftNav .= '<li><a href="'.url($this->prefix_slug($mainMenu->cat).$littleSub->slug).'" title="'.$littleSub->name.'">'.$littleSub->name.'</a></li>';
+                                            }
+                                            
+                                        $leftNav .= '</ul>';
+                                }
+                                $leftNav .= '</div>';
+                                $leftNav .= $this->feature($mainMenu->feature);
+                            $leftNav .= '</div>
+                        </li>';
+        }
+      
+        $request->merge(array("nav" => $nav.$leftNav));
 
         return $next($request);
+    }
+
+
+    /**
+     * 
+     */
+    private function prefix_slug($cat) {
+        switch ($cat) {
+            case '1':
+                $result = 'shop/';
+                break;
+            case '2':
+                $result = 'blog/';
+                break;
+            case '3':
+                $result = 'coaches/';
+                break;
+            default:
+                $result = '';
+                break;
+        }
+        return $result;
+    }
+
+    /**
+     * 
+     */
+    private function feature($f) {
+        switch ($f) {
+            case '1':
+                $result = $this->protein();
+                break;
+            case '2':
+                $result = $this->performance();
+                break;
+            case '3':
+                $result = $this->weightManagement();
+                break;
+            default:
+                $result = '';
+                break;
+        }
+        return $result;
     }
 
     /**

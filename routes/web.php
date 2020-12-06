@@ -21,6 +21,17 @@ Route::middleware(['menu'])->group(function () {
 	Route::get('cart', 'drugStore\cartController@show');
 	Route::post('cart', 'drugStore\cartController@add');
 	Route::put('cart', 'drugStore\cartController@update');
+	
+	Route::middleware(['mustLogin:0'])->group(function () {
+		Route::get('address', 'drugStore\addressController@show');
+		Route::post('address', 'drugStore\addressController@insert');
+		Route::get('new-address', 'drugStore\addressController@addNew');
+		Route::post('finalize-order', 'drugStore\finalizeController@show');
+	});
+});
+
+Route::middleware(['mustLogin:0'])->group(function () {
+	Route::get('خروج', 'userController@quit');
 });
 
 Route::middleware(['login'])->group(function () {
@@ -33,13 +44,7 @@ Route::middleware(['login'])->group(function () {
 	Route::get('فراموشی-رمز', 'userController@forgetShow');
 	Route::post('فراموشی-رمز', 'userController@forget');
 });
-Route::middleware(['mustLogin:0'])->group(function () {
-	Route::get('خروج', 'userController@quit');
-	Route::get('address', 'drugStore\addressController@show');
-	Route::post('address', 'drugStore\addressController@insert');
-	Route::get('new-address', 'drugStore\addressController@addNew');
-	Route::post('finalize-order', 'drugStore\finalizeController@show');
-});
+
 
 Route::middleware(['origin'])->group(function () {
 	Route::post('drug-store/set-score', 'drugStore\communityController@setScore');
