@@ -12,9 +12,9 @@
 			@endif
 				<div class="col-md-8" id="cart-list">
 					@if (sizeof($addresses) == 0)
-						@include('profile/add-address')
+						@include('profile/layout/add-address')
 					@else
-						@include('profile/list-address')
+						@include('profile/layout/list-address')
 					@endif
 				</div>
 				<div class="col-md-4">

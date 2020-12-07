@@ -117,8 +117,12 @@ class addressController
 	public function addNew() {
 		$url = request()->fullUrl();
 		$parts = parse_url($url);
-		parse_str($parts['query'], $query);
-		$form_url = $query['back'];
+		if (isset($parts['query'])) {
+			parse_str($parts['query'], $query);
+			$form_url = $query['back'];
+		} else {
+			$form_url = '';
+		}
 
 		$profileClass = app('App\Http\Controllers\api\profileController');
 		$provinces = $profileClass->provinces();
@@ -137,7 +141,7 @@ class addressController
 
 			return View('drug_store.add-another-address')->with($data);
 		} else {
-			return 'add new address in profile page';
+			return View('profile.add-another-address')->with($data);
 		}
 
 	}

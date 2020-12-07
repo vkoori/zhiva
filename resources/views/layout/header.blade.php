@@ -104,14 +104,14 @@
 						</a>
 					@else
 						<div class="relative">
-							<a id="profile-toggle" href="{{ url('پروفایل') }}" title="حساب کاربری">
+							<a id="profile-toggle" href="{{url('user/dashboard')}}" title="حساب کاربری">
 								<img src="{{ asset('public/assets/images/items/user.svg') }}" alt="پروفایل" width="30px" height="30px">
 								<span>حساب کاربری</span>
 							</a>
 							<div class="expand-menu">
 								<ul>
-									<li><a href="" title="سفارش ها">سفارش ها من</a></li>
-									<li><a href="" title="پروفایل">پروفایل</a></li>
+									<li><a href="{{url('user/order')}}" title="سفارش ها">سفارش ها من</a></li>
+									<li><a href="{{url('user/profile')}}" title="پروفایل">پروفایل</a></li>
 									<li><a href="{{url("خروج")}}" title="خروج">خروج</a></li>
 								</ul>
 							</div>
