@@ -27,6 +27,10 @@ Route::middleware(['menu'])->group(function () {
 		Route::post('address', 'drugStore\addressController@insert');
 		Route::get('new-address', 'drugStore\addressController@addNew');
 		Route::post('finalize-order', 'drugStore\finalizeController@show');
+		Route::get('user/dashboard', 'profileController@dashboard');
+		Route::get('user/profile', 'profileController@profile');
+		Route::get('user/address', 'profileController@profile');
+		Route::get('user/order', 'profileController@profile');
 	});
 });
 

@@ -9,6 +9,7 @@ product page: page view category page: ajax and change construct product page: a
 cart icon in header must be change to ajax 
 menu in mobile (selected item for homepage)
 
+meta tags (title,description, ...)
 
 ################################ performance: "api\drugStore\productController > ajax_price" (call in to "drugStore\productController > customization") : check better 'get product with weight and taste In a moment and if null get again' or 'get all products with weight and get all tastes. after than choose correct product details in logic code'
 
@@ -22,3 +23,6 @@ menu in mobile (selected item for homepage)
 
 #################################
 
+
+.env:
+ALLOWED_DOMAINS=localhost,127.0.0.1,zhivafit.com,propeykar.com

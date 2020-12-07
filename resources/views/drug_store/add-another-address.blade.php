@@ -3,7 +3,7 @@
 			<h1 class="h3">ثبت آدرس جدید</h1>
 			<div class="row">
 				<div class="col-md-8" id="cart-list">
-					@include('../profile/add-address')
+					@include('profile/layout/add-address')
 				</div>
 				<div class="col-md-4">
 					<div class="border p-1em">
