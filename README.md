@@ -1,10 +1,15 @@
+<pre>
 #quick-link img bayad be font taghir peyda kone >> check responsive
 
 icon e filtring ezafe she
 
 asd
 
-product page: page view category page: ajax and change construct product page: add to cart and change options and set loading for them product page: close from after replay to a comment ajax product.js must be update add page view when product stock update, must sms to users product page: موجود شد به من اطلاع بده: disable change qty create popup instead of alert() outofstock and discount in category page am I nedd suggestion in cart page or not need? Suggest products in cart (or products page) needs to have intelligence when shipping is stable, we need sidebar in cart page رمز یک بار مصرف برای ورود create "short message service (sms) OR add to cart" with ajax change qty in cart with ajax change lat, lng in "resources/views/profile/address.blade.php" (2+1 places) address: when select province map must be updated
+
+discountController -> write check
+
+product page: page view 
+category page: ajax and change construct product page: add to cart and change options and set loading for them product page: close from after replay to a comment ajax product.js must be update add page view when product stock update, must sms to users product page: موجود شد به من اطلاع بده: disable change qty create popup instead of alert() outofstock and discount in category page am I nedd suggestion in cart page or not need? Suggest products in cart (or products page) needs to have intelligence when shipping is stable, we need sidebar in cart page رمز یک بار مصرف برای ورود create "short message service (sms) OR add to cart" with ajax change qty in cart with ajax change lat, lng in "resources/views/profile/address.blade.php" (2+1 places) address: when select province map must be updated
 
 cart icon in header must be change to ajax 
 menu in mobile (selected item for homepage)
@@ -26,3 +31,5 @@ meta tags (title,description, ...)
 
 .env:
 ALLOWED_DOMAINS=localhost,127.0.0.1,zhivafit.com,propeykar.com
+
+</pre>

@@ -27,6 +27,8 @@ Route::middleware(['menu'])->group(function () {
 		Route::post('address', 'drugStore\addressController@insert');
 		Route::get('new-address', 'drugStore\addressController@addNew');
 		Route::post('finalize-order', 'drugStore\finalizeController@show');
+		Route::post('bank', 'drugStore\bankController@goToBank');
+		Route::post('check-discount', 'drugStore\discountController@cehck'); // web.php -> cookie | mustLogin -> spcial code for user or count of use
 		Route::get('user/dashboard', 'profileController@dashboard');
 		Route::get('user/profile', 'profileController@profile');
 		Route::get('user/address', 'profileController@profile');
