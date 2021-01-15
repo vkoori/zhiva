@@ -92,6 +92,10 @@
 							#discount-code:focus{
 								border: solid 1px #26bff9;
 							}
+							#discount-code:active + #discount-submit,
+							#discount-code:focus + #discount-submit{
+								color: #26bff9;
+							}
 							#discount-submit{
 								position: absolute;
 								height: calc(100% - 2px);
@@ -99,15 +103,19 @@
 								top: 1px;
 								border: none;
 								background: #ffffff;
+								outline: none;
 							}
 						</style>
-						<form class="relative" action="" method="POST" accept-charset="utf-8" onsubmit="return false;">
+						<form class="relative" action="{{ url('check-discount') }}" method="POST" accept-charset="utf-8" onsubmit="return checkDiscount(this);">
+							{{-- @csrf --}}
 							<input id="discount-code" class="border" type="text" name="discount-code" placeholder="کد تخفیف">
 							<input id="discount-submit" type="submit" value="ثبت">
 						</form>
 						<hr>
-						<form action="" method="get" accept-charset="utf-8">
+						<form action="{{ url('bank') }}" method="POST" accept-charset="utf-8">
+							@csrf
 							<input type="hidden" name="addressid" value="{{$address->id}}">
+							<input type="hidden" name="discount-code" id="discount-order" value="">
 							<button type="submit" class="bt-blue p-1em block w-100 text-center" title="پرداخت و ثبت سفارش">پرداخت و ثبت سفارش</button>
 						</form>
 					</div>

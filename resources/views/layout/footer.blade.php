@@ -25,6 +25,34 @@
 			    pageDots: false,
 			    cellAlign: "right",
 			});
+			// ajax
+			function checkDiscount(t) {
+				var url = t.getAttribute("action");
+				var data = document.getElementById("discount-code").value;
+				document.getElementById("discount-order").value = data;
+				data = "discount-code="+data;
+				
+				var xmlhttp = new XMLHttpRequest();
+
+				xmlhttp.onreadystatechange = function() {
+					if (xmlhttp.readyState == XMLHttpRequest.DONE) {	// XMLHttpRequest.DONE == 4
+						if (xmlhttp.status == 200) {
+							var res = xmlhttp.responseText;
+							console.log(res);
+						} else {
+							console.log(xmlhttp.status);
+						}
+					}
+				};
+
+				xmlhttp.open("POST", url, true);
+				xmlhttp.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+				xmlhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded;');
+				xmlhttp.setRequestHeader("X-CSRF-TOKEN", "{{csrf_token()}}");
+				xmlhttp.send(data);
+
+				return false;
+			}
 		</script>
 	@endif
 </body>

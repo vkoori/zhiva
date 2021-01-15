@@ -22,12 +22,4 @@ class finalizeController
 		return view('drug_store.finalize')->with($data);
 	}
 
-	/**
-	 * 
-	 * 
-	 * @return 
-	 */
-	public function goToBank() {
-		dd($_POST);
-	}
 }
