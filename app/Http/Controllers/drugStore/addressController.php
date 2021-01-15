@@ -13,6 +13,8 @@ class addressController
 	public function show() {
 		$cartController = app('App\Http\Controllers\drugStore\cartController');
 		$data = $cartController->calcCart();
+		if (sizeof($data['cart']) == 0) 
+			return redirect('cart');
 
 		$profileController = app('App\Http\Controllers\profileController');
 		$address = $profileController->address();

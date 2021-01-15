@@ -58,6 +58,7 @@ Route::middleware(['origin'])->group(function () {
 });
 
 Route::get('admin', function () {
+	return redirect('admin/drug-store/add-product');
     return view('admin.omid');
 });
 

@@ -28,6 +28,9 @@
 								<button class="bt-blue p-1em block w-100 text-center" type="submit" title="ادامه فرآیند خرید">ادامه فرآیند خرید</a>
 							@endif
 						</div>
+						<div class="mr-t-1em text-center">
+							<a href="{{url('cart')}}" title="سبد خرید">مرحله قبل</a>
+						</div>
 					</div>
 				</div>
 			@if (sizeof($addresses) == 0)

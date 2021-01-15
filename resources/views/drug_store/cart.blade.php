@@ -1,6 +1,13 @@
 @include('layout/header')
 		<main class="container">
 			<h1 class="h3">سبد خرید</h1>
+			@if($errors->any())
+				<ul class="warning p-1em h5">
+					@foreach($errors->all() as $error)
+					<li class="block">{{ $error }}</li>
+					@endforeach
+				</ul>
+			@endif
 			@if (sizeof($cart) > 0)
 				<div class="row">
 					<div class="col-md-8" id="cart-list">
