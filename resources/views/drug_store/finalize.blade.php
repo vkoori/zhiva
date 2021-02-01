@@ -115,9 +115,13 @@
 						<form action="{{ url('bank') }}" method="POST" accept-charset="utf-8">
 							@csrf
 							<input type="hidden" name="addressid" value="{{$address->id}}">
+							<input type="hidden" name="cart" value="{{Cookie::get('cart')}}">
 							<input type="hidden" name="discount-code" id="discount-order" value="">
 							<button type="submit" class="bt-blue p-1em block w-100 text-center" title="پرداخت و ثبت سفارش">پرداخت و ثبت سفارش</button>
 						</form>
+						<div class="mr-t-1em text-center">
+							<a href="{{url('address')}}" title="انتخاب آدرس">مرحله قبل</a>
+						</div>
 					</div>
 				</div>
 			</div>
