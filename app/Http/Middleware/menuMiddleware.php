@@ -87,7 +87,8 @@ class menuMiddleware {
                         </li>';
         }
       
-        $request->merge(array("nav" => $nav.$leftNav));
+        // $request->merge(array("nav" => $nav.$leftNav));
+        view()->share('nav', $nav.$leftNav);
 
         return $next($request);
     }
