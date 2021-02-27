@@ -129,7 +129,8 @@
 				<img src="{{ asset('public/assets/images/items/menu.svg') }}" alt="" width="25px" height="25px">
 			</span>
 			<ul id="nav">
-				{!!request()->instance()->query('nav')!!}
+				{{-- {!!request()->instance()->query('nav')!!} --}}
+				{!!$nav!!}
 			</ul>
 		</nav>
 	</header><!-- /header -->
